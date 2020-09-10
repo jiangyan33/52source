@@ -1,15 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using _52source.Middlewares;
+using _52sourceService;
+using CommonEntity.MySql;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using System;
 
 namespace _52source
 {
@@ -18,6 +15,9 @@ namespace _52source
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            var option = new DBOptions();
+            Configuration.GetSection("ConnectionOptions").Bind(option);
+            IndexService.InitDbUtils(option);
         }
 
         public IConfiguration Configuration { get; }
@@ -26,6 +26,16 @@ namespace _52source
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            // 通过反射，将指定的服务全都注入到服务容器中
+            // loadFrom:已知程序集的文件名或路径，加载程序集。loadFile是加载程序集中的内容，在这里无法使用
+            var assTypes = System.Reflection.Assembly.LoadFrom(AppDomain.CurrentDomain.BaseDirectory + "52SourceService.dll").GetTypes();
+            foreach (var item in assTypes)
+            {
+                if (item.Namespace == "_52sourceService.BusinessService")
+                {
+                    services.AddTransient(item);
+                }
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,8 +46,10 @@ namespace _52source
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-
+            if (env.IsDevelopment())
+            {
+                app.UseCorsMiddleware();
+            }
             app.UseRouting();
 
             app.UseAuthorization();

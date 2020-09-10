@@ -5,5 +5,10 @@
     <RootNamespace>_52source</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\52sourceService\52sourceService.csproj" />
+    <ProjectReference Include="..\CommonEntity\CommonEntity.csproj" />
+  </ItemGroup>
+
 
 </Project>
