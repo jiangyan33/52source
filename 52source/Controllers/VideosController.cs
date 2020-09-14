@@ -33,7 +33,12 @@ namespace _52source.Controllers
                 return new Result(ResultCode.ArgumentError);
             }
             var result = _videoService.List(new Video() { Id = id });
-            return new Result(data: result);
+            // 读取本地资源
+            var data = new
+            {
+                Video = result.Data[0]
+            };
+            return new Result(data: data);
         }
     }
 }

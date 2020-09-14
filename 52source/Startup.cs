@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using System;
 
@@ -53,11 +54,12 @@ namespace _52source
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
-            //app.UseStaticFiles(new StaticFileOptions
-            //{
-            //    RequestPath = "/52doc",
-            //    FileProvider = new PhysicalFileProvider("D:\\jiangyan33\\myproject\\52doc")
-            //});
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                ServeUnknownFileTypes = true,
+                RequestPath = "/videoSource",
+                FileProvider = new PhysicalFileProvider("D:\\videoSource")
+            });
             app.UseRouting();
 
             app.UseAuthorization();

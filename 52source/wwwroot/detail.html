@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>我爱电子书-《21世纪的管理挑战》| pdf + epub + mobi + awz3, 高清版, 带目录，Kindle版, 多看精排版下载</title>
+    <title>我爱电子书</title>
     <meta name=referrer content=never>
     <meta charset="UTF-8">
     <meta name=viewport content="width=device-width, initial-scale=1.0" />
@@ -15,6 +15,8 @@
     <link rel=stylesheet media=all href="./assets/application.css" data-turbolinks-track=reload />
     <script src="./packs/application.js" data-turbolinks-track=reload></script>
     <script src="https://v1.cnzz.com/z_stat.php?id=1278659305&web_id=1278659305"></script>
+    <script src="./js/common-request.js"></script>
+    <script src="./js/detail.js"></script>
 </head>
 
 <body>
@@ -28,38 +30,22 @@
                     <h1 class="mt20 mb10 f20">我爱电子书</h1>
                     <p class="f12 c-9">52DOC.COM</p>
                 </header>
-                <div class=is-body> <a class="px10 " href="/"> <i class="f16 iconfont icon-warehouse-delivery"></i> 首页
-                    </a> <a class="px10 " href="./users/sign_in.html"> <i class="f16 iconfont icon-gerenzhongxin"></i>
-                        登录/注册
-                    </a> <a href="./category.html" class="px10 "> <i class="f16 iconfont icon-category"></i> 编程语言 </a>
-                    <a href="./category.html" class="px10 "> <i class="f16 iconfont icon-category"></i> 计算机基础 </a> <a
-                        href="./category.html" class="px10 "> <i class="f16 iconfont icon-category"></i> 互联网 </a> <a
-                        href="./category.html" class="px10 "> <i class="f16 iconfont icon-category"></i> 云计算&amp;大数据
-                    </a> <a href="./category.html" class="px10 "> <i class="f16 iconfont icon-category"></i> 人工智能 </a>
-                    <a href="./category.html" class="px10 "> <i class="f16 iconfont icon-category"></i> 设计 </a> <a
-                        href="./category.html" class="px10 "> <i class="f16 iconfont icon-category"></i> 职场办公 </a>
+                <div class=is-body>
                 </div>
             </nav>
         </aside>
-        <div class="fixed menu docify-sidenav"> <a class="px10 " href="/"> <i
-                    class="f16 iconfont icon-warehouse-delivery"></i> 首页 </a> <a class="px10 "
-                href="./users/sign_in.html"> <i class="f16 iconfont icon-gerenzhongxin"></i> 登录/注册 </a> <a
-                href="./category.html" class="px10 "> <i class="f16 iconfont icon-category"></i> 编程语言 </a> <a
-                href="./category.html" class="px10 "> <i class="f16 iconfont icon-category"></i> 计算机基础 </a> <a
-                href="./category.html" class="px10 "> <i class="f16 iconfont icon-category"></i> 互联网 </a> <a
-                href="./category.html" class="px10 "> <i class="f16 iconfont icon-category"></i> 云计算&amp;大数据 </a> <a
-                href="./category.html" class="px10 "> <i class="f16 iconfont icon-category"></i> 人工智能 </a> <a
-                href="./category.html" class="px10 "> <i class="f16 iconfont icon-category"></i> 设计 </a> <a
-                href="./category.html" class="px10 "> <i class="f16 iconfont icon-category"></i> 职场办公 </a> </div>
+        <div class="fixed menu docify-sidenav">
+        </div>
         <div class=menu__toggler> <span></span> <i class="iconfont icon-home"></i> </div>
         <div class=menu__overlay></div>
         <div class="rel column docify-fixed-body is-main" data-hasbar=true>
             <header class="rel is-header">
                 <section class=docify-global-search>
                     <h3>注重体验与质量的电子书资源下载网站</h3>
-                    <form class=docify-search-box autocomplete=off action="/search" accept-charset=UTF-8 method=get>
+                    <form class=docify-search-box autocomplete=off accept-charset="UTF-8" action="./search.html">
                         <input type=text name=keywords id=keywords placeholder="搜索找你想要的的电子书吧~" autofocus=autofocus />
-                        <input type=submit name=commit value="搜索" data-disable-with="搜索" /> </form>
+                        <input type=submit value="搜索" data-disable-with="搜索" />
+                    </form>
                 </section>
                 <div class=docify-profile data-signed=false>
                     <div class=is-body> <a href="./users/sign_in.html"><img alt=logo width="100%"
@@ -71,12 +57,19 @@
             </header>
             <section class="rel docify-content">
                 <header class="mb20 docify-title">
-                    <div class=is-text> <span>分类于:</span> <span class=f12> <span class=docify-badge>其它</span> <span
-                                class=docify-badge>编程语言</span> </span> </div>
+                    <div class=is-text>
+                        <span>分类于:</span>
+                        <span id="categoryList" class=f12>
+                        </span>
+                    </div>
                 </header>
+                <h3 class=pb10> <i class="iconfont icon-category"></i> <span id="videoName"></span> </h3>
                 <section class="mb20 h100 mt20 docify-detail">
                     <div class="p14 docify-card is-introduction">
-                        <h3 class=pb10> <i class="iconfont icon-category"></i> <span>简介</span> </h3>
+                        <section class="row">
+                            <video id='video' controls style="width: 100%;"></video>
+                        </section>
+                        <!-- 
                         <section class=row>
                             <figure class="mr20 rel webkit-sassui-frame-wrapper webkit-sassui-scaleable-image"
                                 style="width: 280px; height: 397.6px; border:1px solid #f5f5f5;"> <img alt="21世纪的管理挑战"
@@ -128,17 +121,14 @@
                                         可以通过用户中心得到电子书更新的通知哦</p>
                                 </footer>
                             </div>
-                        </section>
+                        </section> -->
                     </div>
                     <div class=blank-20></div>
                     <div class="c-6 p14 docify-card">
-                        <h3 class=pb10> <i class="iconfont icon-creditlevel"></i> <span>目录</span> </h3>
+                        <h3 class=pb10> <i class="iconfont icon-creditlevel"></i> <span>简介</span> </h3>
                         <section class="lh-22 f14 docify-catalogue">
-                            <div data-from=book-douban class=collapse-content> 推荐序一<br> 推荐序二<br> 推荐序三<br> 前言<br> 鸣谢<br>
-                                第1章 管理的新范式<br> 第2章 战略——新的必然趋势<br> 第3章 变革的引导者<br> 第4章 信息挑战<br> 第5章 知识工作者的生产率<br> 第6章
-                                自我管理<br> 译者后记<br> </div>
-                            <div class="tc is-action"> <button
-                                    class="cp bgn bg-success pt10 pb20 bdn c-blue">展开查看全部>></button> </div>
+                            <div data-from=book-douban class=collapse-content>
+                            </div>
                         </section>
                     </div>
                     <div class=blank-20></div>
