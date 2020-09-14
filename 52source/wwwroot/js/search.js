@@ -1,6 +1,6 @@
 
-function loadCategoryVideos(categoryId, currentPage = 1) {
-    $.get(`/api/categories/${categoryId}/videos?pageNum=${currentPage}`, function (data, status) {
+function loadCategoryVideos(search, currentPage = 1) {
+    $.get(`/api/videos?pageNum=${currentPage}&pageSize=24&search=${search}`, function (data, status) {
         if (data.code === 0) {
             var resHtml = "";
             var res = data.data.data;
@@ -26,17 +26,22 @@ function loadCategoryVideos(categoryId, currentPage = 1) {
                             </div>`;
             }
             var listNode = $("div.docify-justify-list");
-            listNode.html(resHtml);
-            SetPagination(categoryId, currentPage, data.data.pages);
+            listNode.empty();
+            listNode.append(resHtml);
+            SetPagination(search, currentPage, data.data.pages);
         }
     });
 };
 $(function () {
-    // 分类详情
+    // 搜索详情
 
     // 获取路由参数
     const dict = getUrlParams(window.location.href);
+    loadCategoryVideos(dict.keywords);
 
-    loadCategoryVideos(dict.categoryId);
+    // 设置搜索关键词
+    $('span.docify-badge').html(dict.keywords);
+    $("input[name='keywords']").val(dict.keywords);
+
 });
 

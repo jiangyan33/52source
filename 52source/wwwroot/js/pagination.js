@@ -67,6 +67,5 @@ function SetPagination(categoryId, currentPage, totalPages) {
         navStr += `<span class=next> <a href='javascript:void(0)' onclick="loadCategoryVideos('${categoryId}',${currentPage + 1})" rel=next>下一页</a> </span>\n <span class=last> <a href='javascript:void(0)' onclick="loadCategoryVideos('${categoryId}',${totalPages})">末页</a> </span>`;
     }
     var navNode = $("nav.pagination");
-    navNode.empty();
-    navNode.append(navStr);
+    navNode.html(navStr);
 }

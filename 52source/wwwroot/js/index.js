@@ -25,7 +25,7 @@ $(function () {
                                 </div>
                             </div>`;
             }
-            $("div.docify-justify-list:first").append(resHtml);
+            $("div.docify-justify-list:first").html(resHtml);
         }
     });
 
@@ -33,7 +33,6 @@ $(function () {
         if (data.code === 0) {
             var resHtml = "";
             var res = data.data.data;
-            console.log(res.length);
             for (const item of res) {
                 resHtml += `<div class="post-item is-item ovh docify-card">
                                 <a href="./detail.html?videoId=${item.id}">
@@ -55,7 +54,7 @@ $(function () {
                                 </div>
                             </div>`;
             }
-            $("div.docify-justify-list:last").append(resHtml);
+            $("div.docify-justify-list:last").html(resHtml);
         }
     });
 });

@@ -15,8 +15,8 @@ $(function () {
                     // 登录注册页面
                     loginCate = '<a class="px10 is-active" href="javascript:void(0)"> <i class="f16 iconfont icon-gerenzhongxin"></i> 登录/注册 </a>\n';
                 }
-            } else {
-                // 分类页
+            } else if (href.indexOf('search') === -1) {
+                // 分类页，非搜索页面
                 isCate = true;
             }
             var resHtml = indexCate + loginCate;
@@ -34,8 +34,8 @@ $(function () {
                     resHtml += `<a href="./category.html?categoryId=${item.id}" class="px10 "> <i class="f16 iconfont icon-category"></i> ${item.name} </a> \n`;
                 }
             }
-            $("div.is-body:first").empty().append(resHtml);
-            $("div.menu").empty().append(resHtml);
+            $("div.is-body:first").html(resHtml);
+            $("div.menu").html(resHtml);
         }
     });
 });
@@ -51,5 +51,12 @@ function getUrlParams(url) {
         result[dict[0]] = dict[1];
     }
     return result;
+}
+
+function search() {
+    let keywords = $("input[name='keywords']").val();
+    if (!keywords) return false;
+
+    location.href = `./search.html?keywords=${keywords}`;
 }
 

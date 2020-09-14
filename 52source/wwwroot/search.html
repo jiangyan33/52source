@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
     <title>我爱电子书</title>
-    <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gh3izrka3qj304z050t8w.jpg">
-    <meta name=referrer content=never>
+    <meta charset="UTF-8">
     <meta name=viewport content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/x-icon" href="./assets/favicon.ico" />
     <link rel=stylesheet href="//at.alicdn.com/t/font_1651843_e9roah99k5w.css" />
@@ -13,8 +12,12 @@
     <script crossorigin=anonymous
         src="//cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
     <link rel=stylesheet media=all href="./assets/application.css" data-turbolinks-track=reload />
-    <script src="./packs/js/application.js" data-turbolinks-track=reload></script>
+    <script src="./packs/application.js" data-turbolinks-track=reload>
+    </script>
     <script src="https://v1.cnzz.com/z_stat.php?id=1278659305&web_id=1278659305"></script>
+    <script src="./js/common-request.js"></script>
+    <script src="./js/pagination.js"></script>
+    <script src="./js/search.js"></script>
 </head>
 
 <body>
@@ -23,20 +26,17 @@
             <nav class=docify-sidenav>
                 <header class="mb30 tc is-logo">
                     <div class=blank-30></div>
-                    <p class=f12> <a href="/"><img alt="52doc.com的logo" width=60 src="./assets/logo.png" /></a>
+                    <p class=f12>
+                        <a href="/"><img alt="52doc.com的logo" width=60 src="./assets/logo.png" /></a>
                     </p>
                     <h1 class="mt20 mb10 f20">我爱电子书</h1>
                     <p class="f12 c-9">52DOC.COM</p>
                 </header>
                 <div class=is-body>
-                    <a class="px10 " href="/"> <i class="f16 iconfont icon-warehouse-delivery"></i> 首页 </a>
-                    <a class="px10 " href="/users/sign_in"> <i class="f16 iconfont icon-gerenzhongxin"></i> 登录/注册 </a>
                 </div>
             </nav>
         </aside>
         <div class="fixed menu docify-sidenav">
-            <a class="px10 " href="/"> <i class="f16 iconfont icon-warehouse-delivery"></i> 首页 </a>
-            <a class="px10 " href="/users/sign_in"> <i class="f16 iconfont icon-gerenzhongxin"></i> 登录/注册 </a>
         </div>
         <div class=menu__toggler> <span></span> <i class="iconfont icon-home"></i> </div>
         <div class=menu__overlay></div>
@@ -45,478 +45,34 @@
                 <section class=docify-global-search>
                     <h3>注重体验与质量的电子书资源下载网站</h3>
                     <form class=docify-search-box autocomplete=off action="/search" accept-charset=UTF-8 method=get>
-                        <input type=text name=keywords id=keywords value="C#" placeholder="搜索找你想要的的电子书吧~"
+                        <input type=text name=keywords id=keywords value="" placeholder="搜索找你想要的的电子书吧~"
                             autofocus=autofocus /> <input type=submit name=commit value="搜索" data-disable-with="搜索" />
                     </form>
                 </section>
                 <div class=docify-profile data-signed=false>
-                    <div class=is-body> <a href="/users/sign_in"><img alt=logo width="100%"
-                                src="./assets/logo.png" /></a>
+                    <div class=is-body>
+                        <a href="./users/sign_in">
+                            <img alt=logo width="100%" src="./assets/logo.png" />
+                        </a>
                     </div> <span class=is-dot></span>
                 </div>
-                <div class=docify-index-qq> <a href="/users/auth/qq_connect"><img alt="QQ一键登录" width=160
-                            src="https://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/Connect_logo_5.png" /></a> </div>
+                <div class=docify-index-qq>
+                    <a href="/users/auth/qq_connect">
+                        <img alt="QQ一键登录" width=160
+                            src="https://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/Connect_logo_5.png" />
+                    </a>
+                </div>
             </header>
             <section class="rel docify-content">
-                <div class="mb10 is-banner">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins
-                        class=adsbygoogle style="display:block" data-ad-client=ca-pub-2416128984779603
-                        data-ad-slot=5543684803 data-ad-format=auto data-full-width-responsive=true></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({})
-                    </script>
-                </div>
                 <section class=search-page>
                     <header class="mb20 docify-title">
-                        <div class=is-text> 您搜索的关键字为: <span class=docify-badge>C#</span> </div>
+                        <div class=is-text> 您搜索的关键字为: <span class=docify-badge></span> </div>
                     </header>
                     <div class=bd>
                         <div class="f30 docify-justify-list is-responsive">
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/5982">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gh1q4i9y3vj203z05kdft.jpg"
-                                            title="CLR via C#" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2010-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/5982"> <i
-                                                class="n iconfont icon-store"></i> CLR via C# </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">9.5</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/4108">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1ggx52qd947j207i09kq39.jpg"
-                                            title="敏捷软件开发: 原则模式和实践(C#版)" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2008-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/4108"> <i
-                                                class="n iconfont icon-store"></i> 敏捷软件开发: 原则模式和实践(C#版) </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">9.3</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/5911">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gh0hof2nk8j207i08dmx9.jpg"
-                                            title="C#图解教程: 第4版" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2013-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/5911"> <i
-                                                class="n iconfont icon-store"></i> C#图解教程: 第4版 </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">9.3</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/13049">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263ly1ghvsl5n8gxj207i09gt8w.jpg"
-                                            title="深入理解C#（第2版）" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2012-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/13049"> <i
-                                                class="n iconfont icon-store"></i> 深入理解C#（第2版） </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">9.1</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/19622">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gi0fm7gvb9j207i09eq39.jpg"
-                                            title="C#与.NET 4高级程序设计（第5版）" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2011-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/19622"> <i
-                                                class="n iconfont icon-store"></i> C#与.NET 4高级程序设计（第5版） </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">9.1</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/3058">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1ggn6lbutgfj207i08dwek.jpg"
-                                            title="深入理解C#（第3版）" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2014-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/3058"> <i
-                                                class="n iconfont icon-store"></i> 深入理解C#（第3版） </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">9.0</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/19385">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gi01w8z1aoj207i09974f.jpg"
-                                            title="C#高效编程: 改进C#代码的50个行之有效的办法(第2版)" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2010-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/19385"> <i
-                                                class="n iconfont icon-store"></i> C#高效编程: 改进C#代码的50个行之有效的办法(第2版) </a>
-                                    </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">8.9</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/13781">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263ly1ghvsvstj1yj207i09fgls.jpg"
-                                            title="精通C#（第6版）" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2013-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/13781"> <i
-                                                class="n iconfont icon-store"></i> 精通C#（第6版） </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">8.7</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/6216">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gh1q6rmev9j207i09fmxa.jpg"
-                                            title="C#本质论" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2010-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/6216"> <i
-                                                class="n iconfont icon-store"></i> C#本质论 </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">8.6</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/6435">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gh2sxy254fj203c04oglh.jpg"
-                                            title="C# Primer Plus中文版" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2002-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/6435"> <i
-                                                class="n iconfont icon-store"></i> C# Primer Plus中文版 </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">8.3</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/3836">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gguv37gp9nj207i09vdg1.jpg"
-                                            title="游戏设计、原型与开发: 基于Unity与C#从构思到实现" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2017-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/3836"> <i
-                                                class="n iconfont icon-store"></i> 游戏设计、原型与开发: 基于Unity与C#从构思到实现 </a>
-                                    </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">8.2</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/6333">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gh2swvo36gj207i0au74k.jpg"
-                                            title="C#高级编程: 第6版" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2008-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/6333"> <i
-                                                class="n iconfont icon-store"></i> C#高级编程: 第6版 </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">8.1</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/3154">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1ggn6m59no0j207i0avjrs.jpg"
-                                            title="C#入门经典（第7版）: C# 6.0 &amp; Visual Studio 2015"
-                                            class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2016-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/3154"> <i
-                                                class="n iconfont icon-store"></i> C#入门经典（第7版）: C# 6.0 &amp; Visual
-                                            Studio 2015 </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">7.7</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/6308">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gh2swmksgaj205k05k3yk.jpg"
-                                            title="Head First C#（中文版）: Head First C#" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2010-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/6308"> <i
-                                                class="n iconfont icon-store"></i> Head First C#（中文版）: Head First C#
-                                        </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">7.5</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/6396">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gh2sxk88umj203c048mx2.jpg"
-                                            title="单元测试之道C#版: 使用NUnit" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2005-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/6396"> <i
-                                                class="n iconfont icon-store"></i> 单元测试之道C#版: 使用NUnit </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">7.5</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/13775">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263ly1ghvsvpjgrgj202902s3ya.jpg"
-                                            title="Microsoft C# Windows 程序设计（上下，含光盘）" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2002-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/13775"> <i
-                                                class="n iconfont icon-store"></i> Microsoft C# Windows 程序设计（上下，含光盘）
-                                        </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">7.5</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/2426">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gcp9n0g5q4j206409474p.jpg"
-                                            title="编写高质量代码：改善C#程序的157个建议" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2011-10</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/2426"> <i
-                                                class="n iconfont icon-store"></i> 编写高质量代码：改善C#程序的157个建议 </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">7.1</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/31592">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gifqir240vj207i09o0sv.jpg"
-                                            title="编写高质量代码: 改善C#程序的157个建议" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2011-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/31592"> <i
-                                                class="n iconfont icon-store"></i> 编写高质量代码: 改善C#程序的157个建议 </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">7.1</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/31485">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gie8es594uj207i0a4dg4.jpg"
-                                            title="C#入门经典（第6版）" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2014-01</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/31485"> <i
-                                                class="n iconfont icon-store"></i> C#入门经典（第6版） </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">6.9</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/3656">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gdbti1es3yj208y0dct9g.jpg"
-                                            title="三维模型变形算法：理论和实践（C#版本）" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2017-7-1</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/3656"> <i
-                                                class="n iconfont icon-store"></i> 三维模型变形算法：理论和实践（C#版本） </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">0.0</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/3662">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263ly1gdbti8wulcj20980diwf7.jpg"
-                                            title="GLSL渲染编程基础与实例（C#版本）" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2017-7-1</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/3662"> <i
-                                                class="n iconfont icon-store"></i> GLSL渲染编程基础与实例（C#版本） </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">0.0</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/3665">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263ly1gdbtic1mbnj209z0dv0t6.jpg"
-                                            title="三维模型参数化算法:理论和实践(C#版本)" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2017-7-1</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/3665"> <i
-                                                class="n iconfont icon-store"></i> 三维模型参数化算法:理论和实践(C#版本) </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">0.0</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/256">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gcp7q4zjrdj2064096t96.jpg"
-                                            title="C#7.0核心技术指南（原书第7版）: O’Reilly精品图书系列" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2019-07</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/256"> <i
-                                                class="n iconfont icon-store"></i> C#7.0核心技术指南（原书第7版）: O’Reilly精品图书系列
-                                        </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">0.0</span> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item is-item ovh docify-card"> <a href="/detail/284">
-                                    <figure class="webkit-sassui-scaleable-image docify-ratio-image"> <img
-                                            data-src="https://tva1.sinaimg.cn/large/da432263gy1gcp7scwr9cj206409674q.jpg"
-                                            title="C# 7.0本质论: 名家经典系列" class="is-scaleable is-ratio" />
-                                        <figcaption class=is-caption> <strong>出版日期:</strong> <span>2019-05</span>
-                                        </figcaption>
-                                    </figure>
-                                </a>
-                                <div class="px10 text-justify lh-20 mb10_ mb__ is-body">
-                                    <h3 class="b lc-2 my10 ovh" style="height: 40px"> <a href="/detail/284"> <i
-                                                class="n iconfont icon-store"></i> C# 7.0本质论: 名家经典系列 </a> </h3>
-                                    <div class="row row-justify-between row-center c-6 pb10">
-                                        <div class=is-left> <span class=f12> <i
-                                                    class="f12 iconfont icon-assessedbadge"></i> <span>评分:</span>
-                                            </span> <span class="f14 c-blue">0.0</span> </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <footer class=docify-pagination>
-                            <nav class=pagination role=navigation aria-label=pager> <span class="page current"> 1
-                                </span> <span class=page> <a rel=next href="/search?keywords=C%23&amp;page=2">2</a>
-                                </span> <span class=next> <a rel=next href="/search?keywords=C%23&amp;page=2">下一页</a>
-                                </span> <span class=last> <a href="/search?keywords=C%23&amp;page=2">末页</a> </span>
+                            <nav class=pagination role=navigation aria-label=pager>
                             </nav>
                         </footer>
                     </div>
@@ -527,10 +83,12 @@
                     <p>本站并不以盈利为目的，所有电子文档均来源于网络，旨在发现优质的电子图书，并为大家带来更好的下载体验。</p>
                     <p>如本站的内容对您的权利造成了影响，请发邮件至afeiship#qq.com (#换成@),我们会在第一时间将涉及版权的内容进行删除。</p>
                 </div>
-                <aside class=is-right> <a class=mr10 target=_blank
-                        href="//shang.qq.com/wpa/qunwpa?idkey=931363ee4e473f62e1526e71d35d936b892113e202dcfa77ed29a2c0ac9e5d66"><img
-                            border=0 src="//pub.idqqimg.com/wpa/images/group.png" alt="我爱电子书①群" title="我爱电子书①群"></a> <a
-                        title="我爱电子书 - 关键词: C#" href="/"><img alt=logo width=120 src="./assets/52doc_logo.png" /></a>
+                <aside class=is-right>
+                    <a class=mr10 target=_blank
+                        href="//shang.qq.com/wpa/qunwpa?idkey=931363ee4e473f62e1526e71d35d936b892113e202dcfa77ed29a2c0ac9e5d66">
+                        <img border=0 src="//pub.idqqimg.com/wpa/images/group.png" alt="我爱电子书①群" title="我爱电子书①群">
+                    </a> <a title="我爱电子书 - 关键词: C#" href="/"><img alt=logo width=120
+                            src="./assets/52doc_logo.png" /></a>
                 </aside>
             </footer>
         </div>

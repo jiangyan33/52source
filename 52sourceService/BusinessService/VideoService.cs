@@ -27,22 +27,22 @@ namespace _52sourceService.BusinessService
             string where = "";
             if (video.Enable != 0)
             {
-                where += $@"and enable={video.Enable}";
+                where += $@" and enable={video.Enable}";
             }
 
             if (!string.IsNullOrEmpty(video.Search))
             {
-                where += $@"and (name like '%{video.Search}%' or author like '%{video.Search}%' or intro like '%{video.Search}%' or category_name like '%{video.Search}%')";
+                where += $@" and (name like '%{video.Search}%' or category_name like '%{video.Search}%')";
             }
 
             if (!string.IsNullOrEmpty(video.Id))
             {
-                where += $@"and id='{video.Id}'";
+                where += $@" and id='{video.Id}'";
             }
 
             if (!string.IsNullOrEmpty(video.CategoryId))
             {
-                where += $@"and category_id='{video.CategoryId}'";
+                where += $@" and category_id='{video.CategoryId}'";
             }
             string sql = $@"select * from video where 1 {where}";
 
