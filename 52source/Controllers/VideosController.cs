@@ -19,8 +19,10 @@ namespace _52source.Controllers
         [HttpGet]
         public Result Get([FromQuery] Video video)
         {
-            _videoService.SetData();
-            return new Result(data: null);
+            video.Enable = 1;
+            video.IsAsc = false;
+            var result = _videoService.List(video);
+            return new Result(data: result);
         }
 
         [HttpGet("{id}")]
@@ -31,7 +33,7 @@ namespace _52source.Controllers
                 return new Result(ResultCode.ArgumentError);
             }
             var result = _videoService.List(new Video() { Id = id });
-            return null;
+            return new Result(data: result);
         }
     }
 }

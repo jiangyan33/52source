@@ -1,5 +1,4 @@
 ﻿using NLog;
-using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -51,7 +50,6 @@ namespace LogUtil
                 str1 = null;
             }
 
-            Console.WriteLine(str1);
             return str1;
         }
 

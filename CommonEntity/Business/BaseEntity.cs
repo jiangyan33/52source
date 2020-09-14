@@ -9,16 +9,16 @@ namespace CommonEntity.Business
         public string Search { get; set; }
 
         [JsonIgnore]
-        public int PageNum { get; set; } = 0;
+        public int PageNum { get; set; } = 1;
 
         [JsonIgnore]
-        public int PageSize { get; set; } = 0;
+        public int PageSize { get; set; } = 20;
 
         [JsonIgnore]
         public bool IsAsc { get; set; } = true;
 
         [JsonIgnore]
-        public string Sort
+        public string Order
         {
             get
             {

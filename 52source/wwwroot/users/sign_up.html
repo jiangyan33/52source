@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>注册</title>
+    <meta charset="UTF-8">
+    <meta name=viewport content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link rel=stylesheet href="//at.alicdn.com/t/font_1651843_e9roah99k5w.css" />
+    <script crossorigin=anonymous src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script crossorigin=anonymous src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+    <script src="//connect.qq.com/qc_jssdk.js" charset=utf-8></script>
+    <link rel=stylesheet media=all href="./assets/application.css" data-turbolinks-track=reload />
+    <script src="./packs/application.js" data-turbolinks-track=reload></script>
+    <script src="https://v1.cnzz.com/z_stat.php?id=1278659305&web_id=1278659305"></script>
+</head>
+
+<body>
+    <main class="h100 row box-vertical docify-app">
+        <section class="docify-devise is-sign_in">
+            <header class="row row-center docify-uc--header">
+                <div class="auto row row-center row-justify-between is-body"> <span class="is-logo mr20"> <a href="/">
+                            <img class=w100 alt=logo src="./assets/52doc_logo.png" />
+                        </a> </span> <span class="f14 is-slogan">注重体验与质量的电子书资源下载网站</span> </div>
+            </header>
+            <div class=docify-devise--content>
+                <div class=is-body>
+                    <form class=new_user id=new_user action="/users" accept-charset=UTF-8 method=post><input type=hidden
+                            name=authenticity_token
+                            value="8MSUxRYWV5jFGqN+Rhjg/XLboBC5GZStZ+a/hYJRU58qkgaF8aqnJ72on6Tvsd6zLH+XFtpbaajo4TBGs3F8yQ==" />
+                        <h3 class="mb10 py10 f14 tc docify-tip db"> <i class="iconfont icon-success"></i>
+                            <span>免费注册-我爱电子书用户</span> </h3>
+                        <div class=field>
+                            <div class=is-label> <label for=user_email>电子邮箱</label> </div> <input autofocus=autofocus
+                                autocomplete=off type=email value="" name="user[email]" id=user_email />
+                        </div>
+                        <div class=field>
+                            <div class=is-label> <label for=user_password>密码</label> <em>最少6个字符</em> </div> <input
+                                autocomplete=new-password type=password name="user[password]" id=user_password />
+                        </div>
+                        <div class=field>
+                            <div class=is-label> <label for=user_password_confirmation>密码确认</label> </div> <input
+                                autocomplete=new-password type=password name="user[password_confirmation]"
+                                id=user_password_confirmation />
+                        </div>
+                        <div class=actions> <input type=submit name=commit value="注册" data-disable-with="注册" /> <a
+                                class="btn-link mt10" href="./users/sign_in.html">登录</a> </div>
+                        <div class="row row-center row-justify-between mt10 omniauth"> <span> <a
+                                    href="/users/auth/qq_connect"><img alt="QQ一键登录" width=160
+                                        src="https://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/Connect_logo_5.png" /></a>
+                            </span> <span> <a href="/users/password/new">忘记密码？</a> </span> </div>
+                    </form>
+                </div>
+            </div>
+            <nav class="f12 docify-devise--footer"> <a href="/">网站首页</a> <a href="./users/sign_in.html">登录</a> <a
+                    href="/users/sign_up">注册</a> <a href="/users/password/new">忘记密码？</a> <a
+                    href="/users/confirmation/new">没有收到确认邮件？</a> <a href="/users/unlock/new">没有收到解锁邮件？</a> </nav>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>登录</title>
+    <meta charset="UTF-8">
+    <meta name=viewport content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link rel=stylesheet href="//at.alicdn.com/t/font_1651843_e9roah99k5w.css" />
+    <script crossorigin=anonymous src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script crossorigin=anonymous src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+    <script src="//connect.qq.com/qc_jssdk.js" charset=utf-8></script>
+    <link rel=stylesheet media=all href="../assets/application.css" data-turbolinks-track=reload />
+    <script src="../packs/application.js" data-turbolinks-track=reload></script>
+    <script src="https://v1.cnzz.com/z_stat.php?id=1278659305&web_id=1278659305"></script>
+</head>
+
+<body>
+    <main class="h100 row box-vertical docify-app">
+        <section class="docify-devise is-sign_in">
+            <header class="row row-center docify-uc--header">
+                <div class="auto row row-center row-justify-between is-body"> <span class="is-logo mr20"> <a href="/">
+                            <img class=w100 alt=logo src="../assets/52doc_logo.png" />
+                        </a> </span> <span class="f14 is-slogan">注重体验与质量的电子书资源下载网站</span> </div>
+            </header>
+            <div class=docify-devise--content>
+                <div class=is-body>
+                    <h3 class="mb10 py10 f14 tc docify-tip is-success db"> <i class="iconfont icon-rfq1"></i>
+                        <span>登录-管理你的信息</span> </h3>
+                    <form class=new_user id=new_user action="./users/sign_in.html" accept-charset=UTF-8 method=post>
+                        <input type=hidden name=authenticity_token
+                            value="+zxy4ukvB6tcjk0fQS2RjwEsebmTm5U54NnjA/KqKmmv7rgG8nRyO7wjNCwv3t5tWX7TIbw2z3FSRKvH8tR+aw==" />
+                        <div class=field>
+                            <div class=is-label> <label for=user_email>电子邮箱</label> </div> <input autofocus=autofocus
+                                autocomplete=off type=email value="" name="user[email]" id=user_email />
+                        </div>
+                        <div class=field>
+                            <div class=is-label> <label for=user_password>密码</label> </div> <input
+                                autocomplete=current-password type=password name="user[password]" id=user_password />
+                        </div>
+                        <div class=field>
+                            <style>
+                                .simple_captcha,
+                                .simple_captcha .simple_captcha_field,
+                                .simple_captcha .simple_captcha_image {
+                                    margin: 0px 0px 2px 0px !important;
+                                    padding: 0px !important;
+                                }
+
+                                .simple_captcha .simple_captcha_image img {
+                                    border: 1px solid #DADADA;
+                                    width: 160px;
+                                    height: 46px;
+                                }
+
+                                .simple_captcha .simple_captcha_field input {
+                                    background-color: #efefef;
+                                    text-transform: uppercase;
+                                }
+                            </style>
+                            <div class='row row-center row-justify-between simple_captcha'>
+                                <div class=simple_captcha_field> <input type=text name=captcha id=captcha
+                                        autocomplete=off autocorrect=off autocapitalize=off required=required
+                                        placeholder="请输入验证码" /><input type=hidden name=captcha_key
+                                        id=simple-captcha-hidden-field-simple_captcha-82817d2945f
+                                        value=82817d2945f732ee2b8011c70ed47fcd89c999a2 /> </div>
+                                <div class=simple_captcha_image> <img
+                                        src="https://www.52doc.com/simple_captcha?code=82817d2945f732ee2b8011c70ed47fcd89c999a2&amp;time=1599107489"
+                                        alt=captcha id=simple_captcha-82817d2945f /> </div>
+                                <div class=simple_captcha_refresh_button> <a data-remote=true
+                                        href="https://www.52doc.com/simple_captcha?id=simple_captcha-82817d2945f">换一个</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mr10_ mr__ row row-center field"> <input name="user[remember_me]" type=hidden
+                                value=0 /><input type=checkbox value=1 name="user[remember_me]" id=user_remember_me />
+                            <label for=user_remember_me>记住登录信息</label> </div>
+                        <div class=actions> <input type=submit name=commit value="登录" data-disable-with="登录" /> <a
+                                class="btn-link mt10" href="./users/sign_up">注册</a> </div>
+                        <div class="row row-center row-justify-between mt10 omniauth"> <span> <a
+                                    href="/users/auth/qq_connect"><img alt="QQ一键登录" width=160
+                                        src="https://qzonestyle.gtimg.cn/qzone/vas/opensns/res/img/Connect_logo_5.png" /></a>
+                            </span> <span> <a href="/users/password/new">忘记密码？</a> </span> </div>
+                    </form>
+                </div>
+            </div>
+            <nav class="f12 docify-devise--footer"> <a href="/">网站首页</a> <a href="./users/sign_in.html">登录</a> <a
+                    href="./users/sign_up">注册</a> <a href="/users/password/new">忘记密码？</a> <a
+                    href="./users/confirmation/new">没有收到确认邮件？</a> <a href="/users/unlock/new">没有收到解锁邮件？</a> </nav>
+        </section>
+    </main>
+</body>
+
+</html>

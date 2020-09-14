@@ -50,6 +50,14 @@ namespace _52source
             {
                 app.UseCorsMiddleware();
             }
+
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+            //app.UseStaticFiles(new StaticFileOptions
+            //{
+            //    RequestPath = "/52doc",
+            //    FileProvider = new PhysicalFileProvider("D:\\jiangyan33\\myproject\\52doc")
+            //});
             app.UseRouting();
 
             app.UseAuthorization();

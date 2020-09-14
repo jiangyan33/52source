@@ -18,7 +18,7 @@ namespace _52sourceService.BusinessService
             {
                 sqlWhere += $" and enable={category.Enable}";
             }
-            string sql = $"select * from category {sqlWhere} limit {pageSize}";
+            string sql = $"select * from category {sqlWhere} order by create_date limit {pageSize}";
             var res = DBHelper.MySqlDB.GetDataTable(sql).Table.SerializeToObject<Category>();
             return res;
         }
