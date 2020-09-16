@@ -28,9 +28,9 @@ namespace _52source.Controllers
 
         // 某一个分类下的资源列表
         [HttpGet("{id}/videos")]
-        public Result Get(string id, [FromQuery] int pageNum = 1, [FromQuery] int pageSize = 24, [FromQuery] string order = "hot", [FromQuery] bool isAsc = false)
+        public Result Get(int id, [FromQuery] int pageNum = 1, [FromQuery] int pageSize = 24, [FromQuery] string order = "hot", [FromQuery] bool isAsc = false)
         {
-            if (string.IsNullOrEmpty(id))
+            if (id == 0)
             {
                 return new Result(ResultCode.ArgumentError);
             }

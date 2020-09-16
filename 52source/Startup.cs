@@ -54,11 +54,12 @@ namespace _52source
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
+            var appSetting = Configuration.GetSection("appSetting");
             app.UseStaticFiles(new StaticFileOptions
             {
                 ServeUnknownFileTypes = true,
                 RequestPath = "/videoSource",
-                FileProvider = new PhysicalFileProvider("D:\\videoSource")
+                FileProvider = new PhysicalFileProvider(appSetting["videoPath"])
             });
             app.UseRouting();
 

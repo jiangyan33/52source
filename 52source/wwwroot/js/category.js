@@ -31,12 +31,48 @@ function loadCategoryVideos(categoryId, currentPage = 1) {
         }
     });
 };
+function loadCategoryTexts(parentId, currentPage = 1) {
+    $.get(`/api/contents?pageNum=${currentPage}&parentId=${parentId}`, function (data) {
+        if (data.code === 0) {
+
+            var resHtml = "<dl><dt>文学专区</dt>";
+            if (parentId) {
+                var resHtml = `<dl><dt>${data.data.data[0].parentName}</dt>`;
+            }
+            data.data.data.map(it => it.createDate = new Date(it.createDate).toLocaleDateString());
+            var res = data.data.data;
+            for (const item of res) {
+                if (item.parentId === 0) {
+                    // 进入子集
+                    resHtml += `<dd>
+                                  <span>${item.createDate}</span> <a href="./category.html?parentId=${item.id}&categoryId=1">${item.chapter}</a>
+                                </dd>`;
+                } else {
+                    // 进入详情
+                    resHtml += `<dd>
+                                    <span>${item.createDate}</span> <a href="./content.html?id=${item.id}">${item.chapter}</a>
+                                </dd>`;
+                }
+            }
+            resHtml += "</dl>";
+            var listNode = $("div.docify-justify-list");
+            listNode.html(resHtml);
+            // SetPagination(categoryId, currentPage, data.data.pages);
+        }
+    });
+};
 $(function () {
     // 分类详情
 
     // 获取路由参数
     const dict = getUrlParams(window.location.href);
-
-    loadCategoryVideos(dict.categoryId);
+    if (+dict.categoryId === 1) {
+        // 文学专区特殊处理
+        let parentId = 0;
+        if (dict.parentId) parentId = dict.parentId;
+        loadCategoryTexts(parentId);
+    } else {
+        loadCategoryVideos(dict.categoryId);
+    }
 });
 

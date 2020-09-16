@@ -10,7 +10,7 @@ namespace _52sourceService.BusinessService
         public List<Category> List(Category category, int pageSize = 20)
         {
             string sqlWhere = "where 1";
-            if (!string.IsNullOrEmpty(category.Id))
+            if (category.Id != 0)
             {
                 sqlWhere += $" and id='{category.Id}'";
             }

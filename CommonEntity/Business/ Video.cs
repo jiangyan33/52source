@@ -4,7 +4,7 @@ namespace CommonEntity.Business
 {
     public class Video : BaseEntity
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// 名称
@@ -34,7 +34,7 @@ namespace CommonEntity.Business
         /// <summary>
         /// 分类id
         /// </summary>
-        public string CategoryId { get; set; }
+        public int CategoryId { get; set; }
 
         /// <summary>
         /// 分类名称
@@ -43,11 +43,11 @@ namespace CommonEntity.Business
 
         public DateTime CreateDate { get; set; }
 
-        public string CreateBy { get; set; }
+        public int CreateBy { get; set; }
 
         public DateTime UpdateDate { get; set; }
 
-        public string UpdateBy { get; set; }
+        public int UpdateBy { get; set; }
 
         /// <summary>
         /// 备注

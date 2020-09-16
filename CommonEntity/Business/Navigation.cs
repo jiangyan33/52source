@@ -5,16 +5,10 @@
     /// </summary>
     public class Navigation
     {
-        /// <summary>
-        /// </summary>
-        //public Content PreviousPage { get; set; }
+        public Content PreviousPage { get; set; }
 
-        ///// <summary>
-        ///// </summary>
-        //public Content NextPage { get; set; }
+        public Content NextPage { get; set; }
 
-        ///// <summary>
-        ///// </summary>
-        //public Content CurrentPage { get; set; }
+        public Content CurrentPage { get; set; }
     }
 }

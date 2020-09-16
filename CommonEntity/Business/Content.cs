@@ -7,12 +7,17 @@ namespace CommonEntity.Business
         /// <summary>
         /// 主键
         /// </summary>
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// 父级id
         /// </summary>
-        public string ParentId { get; set; }
+        public int? ParentId { get; set; }
+
+        /// <summary>
+        /// 父级名称
+        /// </summary>
+        public string ParentName { get; set; }
 
         /// <summary>
         /// 章节名称
@@ -37,7 +42,7 @@ namespace CommonEntity.Business
         /// <summary>
         /// 创建人
         /// </summary>
-        public string CreateBy { get; set; }
+        public int CreateBy { get; set; }
 
         /// <summary>
         /// 更新时间
@@ -47,7 +52,7 @@ namespace CommonEntity.Business
         /// <summary>
         /// 创建时间
         /// </summary>
-        public string UpdateBy { get; set; }
+        public int UpdateBy { get; set; }
 
         /// <summary>
         /// 校正次数

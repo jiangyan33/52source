@@ -16,7 +16,24 @@
     <script src="./packs/application.js" data-turbolinks-track=reload></script>
     <script src="https://v1.cnzz.com/z_stat.php?id=1278659305&web_id=1278659305"></script>
     <script src="./js/common-request.js"></script>
-    <script src="./js/detail.js"></script>
+    <script src="./js/content.js"></script>
+    <style>
+        .docify-title>.is-text {
+            color: black;
+            border-bottom: 4px solid rgba(0, 0, 0, 0);
+            position: relative;
+            font-size: 20px;
+            height: 35px;
+            line-height: 30px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        p {
+            text-indent: 2em;
+            line-height: 2;
+        }
+    </style>
 </head>
 
 <body>
@@ -58,25 +75,14 @@
             <section class="rel docify-content">
                 <header class="mb20 docify-title">
                     <div class=is-text>
-                        <span>分类于:</span>
-                        <span id="categoryList" class=f12>
-                        </span>
+
+
                     </div>
                 </header>
-                <h3 class=pb10> <i class="iconfont icon-category"></i> <span id="videoName"></span> </h3>
+                <!-- <h3 class=pb10> <i class="iconfont icon-category"></i> <span id="videoName"></span> </h3> -->
                 <section class="mb20 h100 mt20 docify-detail">
-                    <div class="p14 docify-card is-introduction">
-                        <section class="row">
-                            <video id='video' controls style="width: 100%;"></video>
-                        </section>
-                    </div>
-                    <div class=blank-20></div>
-                    <div class="c-6 p14 docify-card">
-                        <h3 class=pb10> <i class="iconfont icon-creditlevel"></i> <span>简介</span> </h3>
-                        <section class="lh-22 f14 docify-catalogue">
-                            <div data-from=book-douban class=collapse-content>
-                            </div>
-                        </section>
+                    <div id='content'>
+
                     </div>
                     <div class=blank-20></div>
                     <div class="p14 docify-card">

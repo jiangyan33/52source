@@ -7,11 +7,11 @@ namespace _52source.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ContentController : ControllerBase
+    public class ContentsController : ControllerBase
     {
         public ContentService _contentService;
 
-        public ContentController(ContentService contentService)
+        public ContentsController(ContentService contentService)
         {
             _contentService = contentService;
         }
@@ -21,6 +21,15 @@ namespace _52source.Controllers
         {
             var result = _contentService.List(content);
             return new Result(data: result);
+        }
+
+        [HttpGet("{id}")]
+        public Result Get(int id)
+        {
+            var result = _contentService.List(new Content { Id = id, PageNum = -1 });
+            var content = result.Data[0];
+            var data = _contentService.GetNavigation(content);
+            return new Result(data: data);
         }
     }
 }

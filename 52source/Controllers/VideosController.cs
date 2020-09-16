@@ -26,9 +26,9 @@ namespace _52source.Controllers
         }
 
         [HttpGet("{id}")]
-        public Result Get(string id)
+        public Result Get(int id)
         {
-            if (string.IsNullOrEmpty(id))
+            if (id == 0)
             {
                 return new Result(ResultCode.ArgumentError);
             }

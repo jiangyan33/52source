@@ -10,7 +10,7 @@ namespace CommonEntity.Business
         /// <summary>
         /// 主键
         /// </summary>
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// 分类名称
@@ -35,7 +35,7 @@ namespace CommonEntity.Business
         /// <summary>
         /// 创建人
         /// </summary>
-        public string CreateBy { get; set; }
+        public int CreateBy { get; set; }
 
         /// <summary>
         /// 更新时间
@@ -45,7 +45,7 @@ namespace CommonEntity.Business
         /// <summary>
         /// 更新人
         /// </summary>
-        public string UpdateBy { get; set; }
+        public int UpdateBy { get; set; }
 
         /// <summary>
         /// 备注，预留字段
