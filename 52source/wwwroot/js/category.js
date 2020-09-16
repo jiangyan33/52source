@@ -57,7 +57,7 @@ function loadCategoryTexts(parentId, currentPage = 1) {
             resHtml += "</dl>";
             var listNode = $("div.docify-justify-list");
             listNode.html(resHtml);
-            // SetPagination(categoryId, currentPage, data.data.pages);
+            SetTextPagination(parentId, currentPage, data.data.pages);
         }
     });
 };
