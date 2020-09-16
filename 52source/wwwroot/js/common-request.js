@@ -10,6 +10,7 @@ $(function () {
             if (href.indexOf('?') === -1) {
                 if (href.indexOf('users') === -1) {
                     // 首页
+
                     indexCate = '<a class="px10 is-active" href="javascript:void(0)"> <i class="f16 iconfont icon-warehouse-delivery"></i> 首页 </a>\n';
                 } else {
                     // 登录注册页面
